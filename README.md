@@ -229,12 +229,16 @@ First step is to add buttons and text within a parent div you want to render to 
 
     </script>
 
-    ```
+```
+
+Above is just the base code, if run it  will show two buttons one in blue (primary) and one in red (danger) as well as the random text comment. 
+
+Now lets add an edit & remove function above render within our comment class (note it just does an alert popup): 
 
 
-    Now lets add an edit & remove function above render within our comment class (note it just does an alert popup):
 
-    ```
+
+```
 
      edit:   function(){
                 alert('Editing commment');
@@ -245,3 +249,7 @@ First step is to add buttons and text within a parent div you want to render to 
         },
 
 ``` 
+
+
+Now we need to link the functions within our button html elements, we do this by using `onClick={this.FUNCTIONNAME}` attribute. 
+
