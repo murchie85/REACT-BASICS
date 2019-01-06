@@ -41,3 +41,28 @@ Takes a bit of html, throws it into a target div, in the case below 'example'
 ## text/babel
 
 As in the example above, if we don't have this, then the javascript interpereter won't understand as this is JSX inside
+
+## Components
+
+Are a react class - they are just part of your website; could be a button, progress bar, text editor etc. You can put components together to make a bigger component. 
+
+You can make a component like below , use any name you like.  Later on we can add properties, states etc.
+
+```
+
+<div id="example"></div>
+
+    <script type="text/babel">
+
+        var Shiny = React.createClass({
+            render: function(){
+            return(<h3>I am a simple component!</h3>);
+        }
+    });
+
+        ReactDOM.render(<Shiny/>, document.getElementById('example'));
+    </script>
+
+```
+
+** NOTE** the variable name Shiny becomes the tag that we pass in with react render method.
