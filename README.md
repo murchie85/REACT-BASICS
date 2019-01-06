@@ -66,3 +66,46 @@ You can make a component like below , use any name you like.  Later on we can ad
 ```
 
 ** NOTE** the variable name Shiny becomes the tag that we pass in with react render method.
+
+## Multiple Elements
+
+**NOTE** Most important rule is that every single component can only return one parent element. So you can't return something like below:
+
+```
+
+    <div id="example"></div>
+
+    <script type="text/babel">
+
+        var Shiny = React.createClass({
+            render: function(){
+            return(
+            <div>
+                <h1> I am a title</h1>
+                <p> I am a paragraph to be returned with the title via var as parent element</p>
+            </div>);
+        }
+    });
+
+        ReactDOM.render(<Shiny/>, document.getElementById('example'));
+    </script>
+
+```
+
+
+This won't work, because we are trying to return <h1> and <p> at the same time. Instead we need to wrap them in a div
+
+## Multiple Components
+
+Same idea, but within our ReactDOM.render method 
+
+```
+ReactDOM.render(<div>
+<Shiny/>
+<Shiny/>
+<Shiny/>
+</div>
+
+, document.getElementById('example'));
+
+```
