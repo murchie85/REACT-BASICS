@@ -46,7 +46,7 @@ As in the example above, if we don't have this, then the javascript interpereter
 
 Are a react class - they are just part of your website; could be a button, progress bar, text editor etc. You can put components together to make a bigger component. 
 
-You can make a component like below , use any name you like.  Later on we can add properties, states etc.
+You can make a component like below , use any name you like (as long as it starts with a capital).  Later on we can add properties, states etc.
 
 ```
 
@@ -108,4 +108,79 @@ ReactDOM.render(<div>
 
 , document.getElementById('example'));
 
+```
+
+
+## Properties
+
+Allows you to customise your components, if you wanted an app like netflix to display movies in a component, you don't want to make a comp for each movie you will display. 
+
+You want to make the template for one component and customise it in a bunch of different ways. In our case heading 1 is title and heading 2 is description.
+
+Since our parent element is called Movie, we add properties like below ..
+
+
+```
+
+ReactDOM.render(<Movie title="Avatar" genre="Action" />, document.getElementById('example'));
+
+```
+
+But within those two elements we have to refer to title and genre 
+
+```
+<div>
+        <h1>{this.props.title}</h1>
+        <h2>{this.props.genre}</h2>
+</div>
+
+```
+  
+ 
+Bringing it all together: 
+
+```
+<body>
+
+    <div id="example"></div>
+
+    <script type="text/babel">
+
+        var Movie =   React.createClass({
+            render: function(){
+            return (
+
+                    <div>
+                        <h1>{this.props.title}</h1>
+                        <h2>{this.props.genre}</h2>
+                    </div>
+
+            );
+        }
+    });
+
+       
+
+        ReactDOM.render(<Movie title="Avatar" genre="Action" />, document.getElementById('example'));
+
+    </script>
+
+</body>
+
+```
+
+## Multiple Components with Properties
+
+We want to populate our blueprint (Movie) multiple times, and we get what looks like below:
+![props image](props.jpeg)
+
+As you can guess we simply replicate the render method inside a div as shown in the code below:
+
+```
+        ReactDOM.render(<div>
+            <Movie title="Avatar" genre="Action" />
+            <Movie title="Good Will Hunting" genre="Drama" />
+            <Movie title="The Matrix" genre="Action" />
+
+        </div>, document.getElementById('example'));
 ```
