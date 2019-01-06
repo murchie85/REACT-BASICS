@@ -177,10 +177,10 @@ We want to populate our blueprint (Movie) multiple times, and we get what looks 
 As you can guess we simply replicate the render method inside a div as shown in the code below:
 
 ```
-        ReactDOM.render(<div>
-            <Movie title="Avatar" genre="Action" />
-            <Movie title="Good Will Hunting" genre="Drama" />
-            <Movie title="The Matrix" genre="Action" />
-
-        </div>, document.getElementById('example'));
+        ReactDOM.render(
+                <div>
+                    <Movie title="Avatar" genre="Action" />
+                    <Movie title="Good Will Hunting" genre="Drama" />
+                    <Movie title="The Matrix" genre="Action" />
+                </div>, document.getElementById('example'));
 ```
