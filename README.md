@@ -1,5 +1,7 @@
 # INTRODUCTION INTO REACT
 
+![React Logo](react.jpeg)
+
 React is a javascript library for building user interfaces , specifically singe page applications. 
 
 You can include the react libraries by inserting as script tags in html as shown below. 
