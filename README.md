@@ -65,7 +65,7 @@ You can make a component like below , use any name you like (as long as it start
 
 ```
 
-** NOTE** the variable name Shiny becomes the tag that we pass in with react render method.
+**NOTE** the variable name Shiny becomes the tag that we pass in with react render method.
 
 ## Multiple Elements
 
@@ -184,3 +184,64 @@ As you can guess we simply replicate the render method inside a div as shown in 
                     <Movie title="The Matrix" genre="Action" />
                 </div>, document.getElementById('example'));
 ```
+
+
+## EVENT HANDLING 
+
+
+Lets say your component has some buttons on it, when they click on the buttons you want to do something (handle the event).
+
+
+**NOTE** To refer to our css styles, we have to use classname and not class as class is a reserved JSX word.
+
+First step is to add buttons and text within a parent div you want to render to div called container like below. (Note className refers to main.css custom styles)
+
+
+```
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+
+        // a block that will have text, button for editing and button for deleting
+
+        var Comment = React.createClass({
+            render: function(){
+
+                // commentContainer is a css defined style home made 
+                return(
+
+                        <div className="commentContainer">
+                            
+                            <div className="commentText">Random text</div>
+                            <button className="button-primary">Edit</button>
+                            <button className="button-danger">Remove</button>
+
+                        </div>
+
+                );
+
+        }
+    });
+
+        ReactDOM.render(<Comment />, document.getElementById('container'));
+
+    </script>
+
+    ```
+
+
+    Now lets add an edit & remove function above render within our comment class (note it just does an alert popup):
+
+    ```
+
+     edit:   function(){
+                alert('Editing commment');
+        },
+            remove: function(){
+                alert('removing comment');
+
+        },
+
+``` 

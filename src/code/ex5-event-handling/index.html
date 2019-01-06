@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React - Template</title>
+    <link rel="stylesheet" type="text/css" href="../../css/main.css">
+    <script src="../../js/react.min.js"></script>
+    <script src="../../js/react-dom.min.js"></script>
+    <script src="../../js/browser.min.js"></script>
+</head>
+<body>
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+
+        // a block that will have text, button for editing and button for deleting
+
+        var Comment = React.createClass({
+
+
+
+            edit:   function(){
+                alert('Editing commment');
+        },
+            remove: function(){
+                alert('removing comment');
+
+        },
+
+
+            render: function(){
+
+                // commentContainer is a css defined style home made 
+                return(
+
+                        <div className="commentContainer">
+                            
+                            <div className="commentText">Random text</div>
+                            <button className="button-primary">Edit</button>
+                            <button className="button-danger">Remove</button>
+
+                        </div>
+
+                );
+
+        }
+    });
+
+        ReactDOM.render(<Comment />, document.getElementById('container'));
+
+    </script>
+
+</body>
+</html>
