@@ -172,7 +172,7 @@ Bringing it all together:
 ## Multiple Components with Properties
 
 We want to populate our blueprint (Movie) multiple times, and we get what looks like below:
-![props image](props.jpeg)
+![props image](props.jpg)
 
 As you can guess we simply replicate the render method inside a div as shown in the code below:
 
