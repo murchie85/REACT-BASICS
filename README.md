@@ -2,6 +2,7 @@
 
 ![React Logo](react.jpeg)
 
+1. [Terms and functions ](#Terms-and-functions )
 React is a javascript library for building user interfaces , specifically singe page applications. 
 
 You can include the react libraries by inserting as script tags in html as shown below. 
@@ -93,7 +94,7 @@ You can make a component like below , use any name you like (as long as it start
 ```
 
 
-This won't work, because we are trying to return <h1> and <p> at the same time. Instead we need to wrap them in a div
+This won't work, because we are trying to return `<h1>` and `<p>` at the same time. Instead we need to wrap them in a div
 
 ## Multiple Components
 
