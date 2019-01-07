@@ -4,12 +4,13 @@
 
 ## Terms & Functions Examples
 1. [Render](#Render) 
-2. [text/babel](#text/-babel)
+2. [text/babel](#text-babel)
 3. [Components](#Components)
 4. [Multiple Elements](#Multiple-Elements)
-5. [](#)
-6. [](#)
-7. [](#)
+5. [Multiple Components](#Multiple-Components)
+6. [Properties](#Properties)
+7. [Multiple Components with Properties](#Multiple-Components-with-Properties)
+8. [EVENT HANDLING](#EVENT-HANDLING)
 
 
 
@@ -51,7 +52,7 @@ Takes a bit of html, throws it into a target div, in the case below 'example'
 ```
 
 
-## text/babel
+## text-babel
 
 As in the example above, if we don't have this, then the javascript interpereter won't understand as this is JSX inside
 
