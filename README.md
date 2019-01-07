@@ -2,7 +2,19 @@
 
 ![React Logo](react.jpeg)
 
-1. [Terms and functions ](#Terms-and-functions )
+## Terms & Functions Examples
+1. [Render](#Render) 
+2. [text/babel](#text/babel)
+3. [Components](#Components)
+4. [Multiple Elements](#Multiple-Elements)
+5. [](#)
+6. [](#)
+7. [](#)
+
+
+
+
+
 React is a javascript library for building user interfaces , specifically singe page applications. 
 
 You can include the react libraries by inserting as script tags in html as shown below. 
