@@ -4,7 +4,7 @@
 
 ## Terms & Functions Examples
 1. [Render](#Render) 
-2. [text/babel](#text/babel)
+2. [text/babel](#text/-babel)
 3. [Components](#Components)
 4. [Multiple Elements](#Multiple-Elements)
 5. [](#)
