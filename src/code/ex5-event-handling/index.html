@@ -15,33 +15,19 @@
 
     <script type="text/babel">
 
-
-        // a block that will have text, button for editing and button for deleting
-
         var Comment = React.createClass({
 
-
-
-            edit:   function(){
-                alert('Editing commment');
-        },
-            remove: function(){
-                alert('removing comment');
-
-        },
-
-
+            edit:   function(){alert('Editing commment');},
+            remove: function(){alert('removing comment');},
             render: function(){
 
-                // commentContainer is a css defined style home made 
                 return(
 
                         <div className="commentContainer">
                             
-                            <div className="commentText">Random text</div>
+                            <div className="commentText">{this.props.children}</div>
 
-                            //onClick to call function named edit or remove
-                            
+
                             <button onClick={this.edit} className="button-primary">Edit</button>
                             <button onClick={this.remove} className="button-danger">Remove</button>
 
@@ -52,7 +38,12 @@
         }
     });
 
-        ReactDOM.render(<Comment />, document.getElementById('container'));
+        ReactDOM.render(
+        <div className="board">
+            <Comment>I am a comment </Comment>
+            <Comment>Me too </Comment>
+            <Comment>Also me</Comment>
+        </div>, document.getElementById('container'));
 
     </script>
 

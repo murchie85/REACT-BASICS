@@ -194,40 +194,21 @@ Lets say your component has some buttons on it, when they click on the buttons y
 
 **NOTE** To refer to our css styles, we have to use classname and not class as class is a reserved JSX word.
 
-First step is to add buttons and text within a parent div you want to render to div called container like below. (Note className refers to main.css custom styles)
+First step is to add buttons and text within a render function, in the comment class and passed to the div called container (full code at end), comments and buttons look like: 
 
 
 ```
 
-    <div id="container"></div>
-
-    <script type="text/babel">
-
-
-        // a block that will have text, button for editing and button for deleting
-
         var Comment = React.createClass({
             render: function(){
-
-                // commentContainer is a css defined style home made 
                 return(
-
                         <div className="commentContainer">
                             
                             <div className="commentText">Random text</div>
                             <button className="button-primary">Edit</button>
                             <button className="button-danger">Remove</button>
 
-                        </div>
-
-                );
-
-        }
-    });
-
-        ReactDOM.render(<Comment />, document.getElementById('container'));
-
-    </script>
+                        </div>);}});
 
 ```
 
@@ -237,19 +218,97 @@ Now lets add an edit & remove function above render within our comment class (no
 
 
 
-
 ```
 
-     edit:   function(){
-                alert('Editing commment');
-        },
-            remove: function(){
-                alert('removing comment');
-
-        },
-
+    edit:   function(){alert('Editing commment');},
+    remove: function(){alert('removing comment');},
 ``` 
 
 
 Now we need to link the functions within our button html elements, we do this by using `onClick={this.FUNCTIONNAME}` attribute. 
 
+```
+<button onClick={this.edit} className="button-primary">Edit</button>
+<button onClick={this.remove} className="button-danger">Remove</button>
+```
+
+Full code below, we have added in a board css style to make it look nicer in a blue box. 
+
+```
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Comment = React.createClass({
+
+            edit:   function(){alert('Editing commment');},
+            remove: function(){alert('removing comment');},
+            render: function(){
+
+                return(
+
+                        <div className="commentContainer">
+                            
+                            <div className="commentText">Random text</div>
+
+
+                            <button onClick={this.edit} className="button-primary">Edit</button>
+                            <button onClick={this.remove} className="button-danger">Remove</button>
+
+                        </div>
+
+                );
+
+        }
+    });
+
+        ReactDOM.render(<div className="board">
+                            <Comment>Howdy</Comment>
+                        </div>, document.getElementById('container'));
+```
+
+Now lets repeat this three times with different text overwriting "Random Text" - however we do not use `this.props.elementname` instead we use `this.props.chilldren`
+
+Full Code below:
+
+```
+
+    <div id="container"></div>
+
+    <script type="text/babel">
+
+        var Comment = React.createClass({
+
+            edit:   function(){alert('Editing commment');},
+            remove: function(){alert('removing comment');},
+            render: function(){
+
+                return(
+
+                        <div className="commentContainer">
+                            
+                            <div className="commentText">{this.props.children}</div>
+
+
+                            <button onClick={this.edit} className="button-primary">Edit</button>
+                            <button onClick={this.remove} className="button-danger">Remove</button>
+
+                        </div>
+
+                );
+
+        }
+    });
+
+        ReactDOM.render(
+        <div className="board">
+            <Comment>I am a comment </Comment>
+            <Comment>Me too </Comment>
+            <Comment>Also me</Comment>
+        </div>, document.getElementById('container'));
+
+    </script>
+
+
+```
